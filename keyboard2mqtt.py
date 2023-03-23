@@ -12,6 +12,7 @@ running = True
 while running:
 
         # Get the keyboard's current scan codes
+	#hid.Devoce(vendor_id,product_id)
         scan_codes = hid.Device(18498,1).read(8)
 
         #fix scancodes
@@ -19,7 +20,7 @@ while running:
         result_str = byte_str.split('\x00')
 
         # Connect and Publish a message to the "keyboard" topic with the scan codes
-        client.connect("mqtt.blackax.net")
+        client.connect("mqtt.blackax.net") #Set your MQTT broker 
         client.publish("keyboard", str(result_str))
 
         # Sleep for 1 second
