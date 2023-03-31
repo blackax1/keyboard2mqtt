@@ -21,7 +21,7 @@ while running:
 
         # Connect and Publish a message to the "keyboard" topic with the scan codes
         client.connect("mqtt.blackax.net") #Set your MQTT broker 
-        client.publish("keyboard", str(result_str))
+        client.publish("keyboard2mqtt", str(result_str))
 
         # Sleep for 1 second
         time.sleep(.2)
